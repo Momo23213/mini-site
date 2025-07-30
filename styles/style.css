@@ -168,6 +168,7 @@ div[class^='card'][class$='prioritize']:not([class*='out']) {
     grid-template-columns: 1fr 1fr;
     gap: calc(var(--spacing) * 8);
     align-items: center;
+    padding: 20px;
 }
 
 .about-text h2 {

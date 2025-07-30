@@ -617,6 +617,12 @@ hr{
 
 
 @media (max-width: 750px){
+    .about-content {
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: calc(var(--spacing) * 8);
+}
     .conte{
     display: flex;
     border-radius: 20px;
