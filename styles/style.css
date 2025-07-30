@@ -163,6 +163,7 @@ div[class^='card'][class$='prioritize']:not([class*='out']) {
 
 /* About Section */
 .about-content {
+    padding: 20px;
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: calc(var(--spacing) * 8);

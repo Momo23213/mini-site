@@ -12,7 +12,15 @@ let i=1;
         name: "Sac à dos",
         category: "Mode & Accessoires",
         price: prix(),
-        image: `../images/sac${i}.jpg`,
+        image: `./images/sac${i}.jpg`,
+        description: "Transportez vos affaires en toute sécurité et avec style grâce à ce sac à dos conçu pour s’adapter à toutes vos activités : école, travail, voyage ou sorties quotidiennes.."
+    },
+    {
+        id: i++,
+        name: "Sac à dos",
+        category: "Mode & Accessoires",
+        price: prix(),
+        image: `./images/sac${i}.jpg`,
         description: "Transportez vos affaires en toute sécurité et avec style grâce à ce sac à dos conçu pour s’adapter à toutes vos activités : école, travail, voyage ou sorties quotidiennes.."
     },
     {
@@ -172,7 +180,7 @@ let i=1;
         name: "Sac à dos",
         category: "Mode & Accessoires",
         price: prix(),
-        image: `../images/sac${i}.jpg`,
+        image: `./images/sac${i}.jpg`,
         description: "Transportez vos affaires en toute sécurité et avec style grâce à ce sac à dos conçu pour s’adapter à toutes vos activités : école, travail, voyage ou sorties quotidiennes.."
     },
     {
@@ -180,7 +188,7 @@ let i=1;
         name: "Sac à dos",
         category: "Mode & Accessoires",
         price: prix(),
-        image: `../images/sac${i}.jpg`,
+        image: `./images/sac${i}.jpg`,
         description: "Transportez vos affaires en toute sécurité et avec style grâce à ce sac à dos conçu pour s’adapter à toutes vos activités : école, travail, voyage ou sorties quotidiennes.."
     },
     {
@@ -188,15 +196,7 @@ let i=1;
         name: "Sac à dos",
         category: "Mode & Accessoires",
         price: prix(),
-        image: `../images/sac${i}.jpg`,
-        description: "Transportez vos affaires en toute sécurité et avec style grâce à ce sac à dos conçu pour s’adapter à toutes vos activités : école, travail, voyage ou sorties quotidiennes.."
-    },
-    {
-        id: i++,
-        name: "Sac à dos",
-        category: "Mode & Accessoires",
-        price: prix(),
-        image: `../images/sac${i}.jpg`,
+        image: `./images/sac${i}.jpg`,
         description: "Transportez vos affaires en toute sécurité et avec style grâce à ce sac à dos conçu pour s’adapter à toutes vos activités : école, travail, voyage ou sorties quotidiennes.."
     },
 ]
