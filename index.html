@@ -6,10 +6,10 @@
     <title>SamSgopping</title>
     <link rel="stylesheet" href="./styles/index.css">
     <link rel="stylesheet" href="./styles/style.css">
-    <link rel="stylesheet" href="./css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <script src="./scripts/index.js" defer></script>
-    <script src="./scripts/produit.js" defer></script>
-    <script src="./scripts/" defer></script>
+    <script src="./scripts/data.js" defer></script>
+    <!-- <script src="./scripts/panier.js" defer></script> -->
 </head>
 <body>
     <header>
@@ -29,10 +29,10 @@
             <div class="signe">
                 <button id="connexion">Se connecter</button>
                 <div class="paniers">
-                    <button class="fass iconCart">
+                    <button class="fass menu" data-code="Panier">
                           <i class="fas fa-shopping-cart"></i>
                     </button>
-                    <p>0</p>
+                    <p id="compteur">0</p>
                 </div>
             </div>
         </nav>
@@ -79,31 +79,126 @@
             <div class="boutiques">
                  <h1>Binevenue dans notre boutique en ligne</h1>
             </div>
+            <div class="filter-controls">
+                    <label for="">Recherche </label>
+                            <select class="filter-select" id="category-filter">
+                                <option value="">Toutes les catégories</option>
+                                <option value="electronics">Électronique</option>
+                                <option value="clothing">Vêtements</option>
+                                <option value="accessories">Accessoires</option>
+                                <option value="home">Maison</option>
+                            </select>
+                           <input type="text" placeholder="Searche"> 
+             </div>
             <div class="produits">
             </div>
 
 
         </section>
         <section class="section" id="Contact">
-            <h1>Contact</h1>
+             <div class="container">
+                <h1 class="section-title">Contactez-nous</h1>
+                <div class="contact-content">
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h3>Adresse</h3>
+                                <p>123 Rue du Commerce<br>75001 Paris, France</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <h3>Téléphone</h3>
+                                <p>+33 1 23 45 67 89</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <h3>Email</h3>
+                                <p>contact@shoplux.fr</p>
+                            </div>
+                        </div>
+                    </div>
+                    <form class="contact-form">
+                        <div class="form-group">
+                            <input type="text" class="form-input" placeholder="Votre nom" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" class="form-input" placeholder="Votre email" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea class="form-input" placeholder="Votre message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">Envoyer le message</button>
+                    </form>
+                </div>
+            </div>
         </section>
+
+
         <section class="section" id="Apropos">
-            <h1>Apropos</h1>
+              <div class="container">
+                <h1 class="section-title">À propos de ShopLux</h1>
+                <div class="about-content">
+                    <div class="about-text">
+                        <h2>Notre histoire</h2>
+                        <p>Depuis 2020, ShopLux s'engage à vous offrir les meilleurs produits avec un service client exceptionnel. Notre équipe passionnée sélectionne minutieusement chaque article pour garantir la qualité et l'innovation.</p>
+                        <h2>Notre mission</h2>
+                        <p>Rendre le shopping en ligne accessible, sûr et agréable pour tous. Nous croyons que chacun mérite d'avoir accès à des produits de qualité à des prix justes.</p>
+                    </div>
+                    <div class="about-image">
+                        <img src="https://images.pexels.com/photos/3184339/pexels-photo-3184339.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Notre équipe">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="section" id="Panier">
+            <div class="conte">
+                <h1>Panier</h1>
+                <div class="pan">
+                    <div class="itemes">
+                        <div class="img"><img src="/images/8b056865403f84701b882f9682656518.jpg" alt=""></div>
+                        <div class="info">
+                            <p>tecko pop</p>
+                          <p>300000 GNF/400000 GNF</p>
+                        </div>
+                        <div class="footer">
+                            <button>-</button>
+                            <p>3</p>
+                            <button>+</button>
+                        </div>
+                </div>
+                 </div>
+                 <div class="tol">
+                       <div class="totaux">
+                        <h1>Total</h1>
+                        <h1 id="totaux">2000 GNF</h1>
+                </div>
+                <div class="valid">
+                    <button class="menu" data-code="Boutique">Boutique</button>
+                    <button>Valider</button>
+                </div>
+                 </div>
+             
+            </div>
         </section>
 
     </main>
 
 
-        <!-- La gestion du panier   -->
+        La gestion du panier  
         
-        <div class="cart">
+        <!-- <div class="cart">
         <h2>
             Panier de payement
         </h2>
 
-        <div class="listCart">
+        <div class="listCart" id="cart-items">
 
-            <div class="item">
+            <div class="item" id="cart-modal">
                 <img src="./images/0a4d8acd66c1f2b3a8ce49a03ae768fe.jpg">
                 <div class="content">
                     <div class="name">CoPilot / Black / Automatic</div>
@@ -138,7 +233,7 @@
                 <a href="checkout.html">CHECKOUT</a>
             </div>
         </div>
-    </div>
+    </div> -->
        
     <footer>
         <div class="contenaire">
@@ -173,8 +268,5 @@
             <p>2025 SamShop. Tous droits réservés</p>
         </div>
     </footer>
-
-
-    <script src="./scripts/data.js"></script>
 </body>
 </html>

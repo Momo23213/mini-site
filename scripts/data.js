@@ -223,7 +223,7 @@ let i=1;
           </div>
         </div>
         <div class="addCard" onclick="panier(${event.id})">
-           <button  onclick="addToCart(${event.id})">
+           <button  onclick="ajoute(event.id)">
            <i class="fa-solid fa-basket-shopping"></i>
            </button>
         </div>
@@ -245,144 +245,55 @@ let i=1;
  })
 
 
-function panier(id){
-    const tableau=["djd"]
-    const p = products.find(pro => pro.id === id);
-     const shop={
-        image:p.image,
-        id:p.id,
-        nom:p.name,
-        prix:p.price
-     }
-     tableau.push({
-        image:p.image,
-        id:p.id,
-        nom:p.name,
-        prix:p.price
-     })
-     console.log(tableau+" ok");
-     
-       sessionStorage.setItem("Panier",JSON.stringify(shop))
-     pop()
+   
+ let compteur=document.querySelector("#compteur")
+compteur.textContent=12
+
+function enregistrement(id){
+    sessionStorage.setItem("Panier",JSON.stringify(id))
 }
 
-
-function pop(){
-      let tabs;
-        tabs=[JSON.parse(sessionStorage.Panier)]
-      document.querySelector(".listCart").innerHTML=""  
-     tabs.forEach(e=>{
-        const pa=document.createElement("div")
-        pa.classList.add("listCart");
-        pa.innerHTML=`
-            <div class="item">
-                <img src="${e.image}">
-                <div class="content">
-                    <div class="name">CoPilot / Black / Automatic</div>
-                    <div class="price">${e.price} / 1 product</div>
-                </div>
-                <div class="quantity">
-                    <button class="plus">-</button>
-                    <span class="value">1</span>
-                    <button class="plus">+</button>
-                </div>
-            </div>       
-
-        `
-    document.querySelector(".listCart").appendChild(pa)
-
-     })
-
+function lirePanier(){
+    let produit=sessionStorage.getItem("Panier")
+    if(produit==null){
+        return []
+    } else{
+        return JSON.parse(produit)
+    }
 }
 
-
-
-
-const addToCart = (product_id) => {
-    let positionThisProductInCart = cart.findIndex((value) => value.product_id == product_id);
-    if(cart.length <= 0){
-        cart = [{
-            product_id: product_id,
-            quantity: 1
-        }];
-    }else if(positionThisProductInCart < 0){
-        cart.push({
-            product_id: product_id,
-            quantity: 1
-        });
+function ajoute(produit){
+    let panier=lirePanier()
+    let foundProduit=panier.find(p=> p.id==produit.id)
+    if(foundProduit==undefined){
+        foundProduit.quantite++;
     }else{
-        cart[positionThisProductInCart].quantity = cart[positionThisProductInCart].quantity + 1;
+        produit.quantite=1;
+        panier.push(produit)
     }
-    addCartToHTML();
-    addCartToMemory();
-}
-const addCartToMemory = () => {
-    localStorage.setItem('cart', JSON.stringify(cart));
-}
-const addCartToHTML = () => {
-    listCartHTML.innerHTML = '';
-    let totalQuantity = 0;
-    if(cart.length > 0){
-        cart.forEach(item => {
-            totalQuantity = totalQuantity +  item.quantity;
-           
-            pa.dataset.id = item.product_id;
-
-            let positionProduct = products.findIndex((value) => value.id == item.product_id);
-            let info = products[positionProduct];
-           const pa=document.createElement("div")
-        pa.classList.add("listCart");
-        pa.innerHTML=`
-            <div class="item">
-                <img src="${item.image}">
-                <div class="content">
-                    <div class="name">${item.name}</div>
-                    <div class="price">${e.price} / 1 product</div>
-                </div>
-                <div class="quantity">
-                    <button class="plus">-</button>
-                    <span class="value">1</span>
-                    <button class="plus">+</button>
-                </div>
-            </div>       
-
-        `
-    document.querySelector(".listCart").appendChild(pa)
-        })
-    }
-    iconCartSpan.innerText = totalQuantity;
+    enregistrement(panier)
 }
 
-listCartHTML.addEventListener('click', (event) => {
-    let positionClick = event.target;
-    if(positionClick.classList.contains('minus') || positionClick.classList.contains('plus')){
-        let product_id = positionClick.parentElement.parentElement.dataset.id;
-        let type = 'minus';
-        if(positionClick.classList.contains('plus')){
-            type = 'plus';
-        }
-        changeQuantityCart(product_id, type);
-    }
-})
-const changeQuantityCart = (product_id, type) => {
-    let positionItemInCart = cart.findIndex((value) => value.product_id == product_id);
-    if(positionItemInCart >= 0){
-        let info = cart[positionItemInCart];
-        switch (type) {
-            case 'plus':
-                cart[positionItemInCart].quantity = cart[positionItemInCart].quantity + 1;
-                break;
-        
-            default:
-                let changeQuantity = cart[positionItemInCart].quantity - 1;
-                if (changeQuantity > 0) {
-                    cart[positionItemInCart].quantity = changeQuantity;
-                }else{
-                    cart.splice(positionItemInCart, 1);
-                }
-                break;
+function removePanier(produit){
+     let panier=lirePanier()
+    let foundProduit=panier.find(p=> p.id!=produit.id)
+    enregistrement(foundProduit)
+}
+
+function changeQuantity(product,quantity){
+     let panier=lirePanier()
+    let foundProduit=panier.find(p=> p.id==produit.id)
+    if(foundProduit==undefined){
+        foundProduit.quantite+=quantity;
+        if(foundProduit.quantite<=0){
+            removePanier(foundProduit)
+        }else{
+            enregistrement(panier)
         }
     }
-    addCartToHTML();
-    addCartToMemory();
+
+}
+
+function total(){
+
 }
