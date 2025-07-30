@@ -616,7 +616,28 @@ hr{
 
 
 
+#Contact{
+    padding: 20px;
+
+}
+.section-title{
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
 @media (max-width: 750px){
+    .about-content{
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: calc(var(--spacing) * 8);
+       align-items: center;
+    }
+    .contact-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: calc(var(--spacing) * 8);
+    align-items: center;
+}
     .about-content {
     padding: 20px;
     display: grid;
