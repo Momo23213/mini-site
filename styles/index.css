@@ -518,7 +518,7 @@ hr{
     width: 50%;
     padding: 15px;
     margin: 20px auto;
-    height: calc(90vh + 20px);
+    height: auto;
     flex-direction: column;
     background: #0ee88d;
     position: relative;
