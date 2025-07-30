@@ -199,11 +199,17 @@ div[class^='card'][class$='prioritize']:not([class*='out']) {
     display: grid;
     grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
     gap: calc(var(--spacing) * 8);
+    justify-content: center;
+    align-items: center;
+     height: 70vh;
 }
 .about-content {
+    justify-content: center;
+    align-items: center;
     display: grid;
     grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
     gap: calc(var(--spacing) * 8);
+    height: 100vh;
 }
 
 .contact-item {
