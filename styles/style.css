@@ -1,0 +1,145 @@
+:root{
+    --green: #3BE798;
+    --violet: #7F6EB2;
+    --color-item: #2B2B2B;
+}
+
+
+div[class*='new'] .img {
+    background-size: 50px;
+    background-repeat: no-repeat;
+    background-position: top right;
+}
+
+div[class^="card"]{
+    border-radius: 30px;
+    width:300px;
+    background-color: var(--color-item);
+}
+.basicInfo{
+    background-color: #f5f5f5;
+    border-radius: 25px;
+    padding:25px;
+    position: relative;
+}
+.title .category,
+.title .info{
+    font-weight: 600;
+    font-size: x-small;
+}
+.title .name{
+    font-weight: bold;
+    font-size: large;
+    padding-bottom:3px;
+}
+div[class^="card"] .img{
+    position: relative;
+    z-index: 1;
+    text-align: center;
+}
+div[class^="card"] .img img{
+    height:200px;
+    transform: scale(1);
+    transition: 0.5s;
+}
+
+.colors{
+    display: flex;
+    font-size: xx-small;
+    text-align: center;
+    gap: 1em;
+}
+.colors .name{
+    margin-bottom:5px;
+}
+.colors .ellipse{
+    width:40px;
+    height:40px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.mores{
+    padding:25px;
+}
+.mores .stars,
+.mores .price{
+    display: inline-block;
+}
+.mores .price{
+    float: right;
+    color:#eee;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+.mores .stars{
+    color:#9b9a9a;
+}
+.text-yellow{
+    color:rgb(209, 209, 6);
+}
+.addCard{
+    position: absolute;
+    width:100%;
+    bottom:0;
+}
+.addCard i{
+    position: absolute;
+    width:50px;
+    height:50px;
+    background-color: var(--green);
+    color:#222;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    right:90px;
+    bottom:-25px;
+    border:5px solid var(--color-item);
+    transition: 0.5s;
+    opacity: 0;
+    transform: translate(0,10px);
+}
+.card-seller{
+    margin: 20px;
+}
+.addCard::after{
+    right:unset;
+    left:107px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 55%;
+}
+/* animation */
+div[class^="card"]:hover .img img{
+    transform: scale(1.2) translateY(-20px);
+}
+div[class^="card"]:hover .img::after{
+    width:90%;
+
+}
+div[class^="card"]:hover .addCard i,
+div[class^="card"]:hover .addCard::before,
+div[class^="card"]:hover .addCard::after{
+    opacity: 1;
+    transform: translate(0,0);
+}
+
+
+.list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+
+
+div[class^='card'][class*='seller'] {
+    --color-item: #3376ce;
+}
+div[class^='card'][class*='out'] {
+    filter: grayscale(1);
+    opacity: 0.5;
+}
+div[class^='card'][class$='prioritize']:not([class*='out']) {
+    order: -1;
+}

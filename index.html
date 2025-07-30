@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SamSgopping</title>
+    <link rel="stylesheet" href="./styles/index.css">
+    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="stylesheet" href="./css/all.min.css">
+    <script src="./scripts/index.js" defer></script>
+    <script src="./scripts/produit.js" defer></script>
+    <script src="./scripts/" defer></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="hamber">
+                <img src="./images/burger-menu.svg" id="hamber">
+            </div>
+            <div class="titre">
+                <h1>SamShop</h1>
+            </div>
+            <div class="nav-link">
+                 <button class="active menu" data-code="Acceuil">Acceuil</button>
+                 <button class="menu" data-code="Boutique">Boutique</button>
+                 <button class="menu" data-code="Contact">Contact</button>
+                 <button class="menu" data-code="Apropos">Apropos</button>
+            </div>
+            <div class="signe">
+                <button id="connexion">Se connecter</button>
+                <div class="paniers">
+                    <button class="fass iconCart">
+                          <i class="fas fa-shopping-cart"></i>
+                    </button>
+                    <p>0</p>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section class="section" id="Acceuil">
+            <div class="debut">
+                <div class="gauche">
+               <h1>Découvrez nos dernière collections</h1>
+               <p>Des produits de qualité permiumà prix abordables</p>
+               <button class="menu" data-code="Boutique">Voir la boutique</button>
+            </div>
+            </div>
+            
+            <div class="detail">
+                <h1>Pourquoi choisir SamShop ?</h1>
+                <div class="details">
+                        <div class="feature-card">
+                            <i class="fas fa-shipping-fast"></i>
+                            <h3>Livraison rapide</h3>
+                            <p>Livraison gratuite en 24-48h partout en France</p>
+                        </div>
+                        <div class="feature-card">
+                            <i class="fas fa-shield-alt"></i>
+                            <h3>Paiement sécurisé</h3>
+                            <p>Vos données sont protégées avec le cryptage SSL</p>
+                        </div>
+                        <div class="feature-card">
+                            <i class="fas fa-undo"></i>
+                            <h3>Retour gratuit</h3>
+                            <p>30 jours pour changer d'avis, retour gratuit</p>
+                        </div>
+                        <div class="feature-card">
+                            <i class="fas fa-headset"></i>
+                            <h3>Support 24/7</h3>
+                            <p>Notre équipe est disponible 24h/24, 7j/7</p>
+                        </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="section" id="Boutique">
+            <div class="boutiques">
+                 <h1>Binevenue dans notre boutique en ligne</h1>
+            </div>
+            <div class="produits">
+            </div>
+
+
+        </section>
+        <section class="section" id="Contact">
+            <h1>Contact</h1>
+        </section>
+        <section class="section" id="Apropos">
+            <h1>Apropos</h1>
+        </section>
+
+    </main>
+
+
+        <!-- La gestion du panier   -->
+        
+        <div class="cart">
+        <h2>
+            Panier de payement
+        </h2>
+
+        <div class="listCart">
+
+            <div class="item">
+                <img src="./images/0a4d8acd66c1f2b3a8ce49a03ae768fe.jpg">
+                <div class="content">
+                    <div class="name">CoPilot / Black / Automatic</div>
+                    <div class="price">$550 / 1 product</div>
+                </div>
+                <div class="quantity">
+                    <button class="plus">-</button>
+                    <span class="value">3</span>
+                    <button class="plus">+</button>
+                </div>
+            </div>
+            <div class="item">
+                <img src="./images/0a4d8acd66c1f2b3a8ce49a03ae768fe.jpg">
+                <div class="content">
+                    <div class="name">CoPilot / Black / Automatic</div>
+                    <div class="price">$550 / 1 product</div>
+                </div>
+                <div class="quantity">
+                    <button class="plus">-</button>
+                    <span class="value">3</span>
+                    <button class="plus">+</button>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="buttons">
+            <div class="close">
+                CLOSE
+            </div>
+            <div class="checkout">
+                <a href="checkout.html">CHECKOUT</a>
+            </div>
+        </div>
+    </div>
+       
+    <footer>
+        <div class="contenaire">
+            <div class="nom">
+                 <div class="titre">SamShop</div>
+                <p>Votre boutique en ligne de confiance depuis 2016</p>
+            </div>
+            <div class="lien">
+                 <div class="titre">Lien rapide</div>
+                 <button class= "menu" data-code="Acceuil">Acceuil</button>
+                 <button class="menu" data-code="Boutique">Boutique</button>
+                 <button class="menu" data-code="Contact">Contact</button>
+                 <button class="menu" data-code="Apropos">Apropos</button>
+            </div>
+            <div class="service">
+                <div class="titre">Service client</div>
+                <h3>FAQ</h3>
+                <h3>Retour</h3>
+                <h3>Livraison</h3>
+                <h3>Support</h3>
+            </div>
+            <div class="suivre">
+                <div class="titre">Suivez-noous</div>
+                <i class="fab fa-facebook"></i>
+                <i class="fab fa-youtube"></i>
+                <i class="fab fa-tiktok"></i>
+                <i class="fab fa-instagram"></i>
+            </div>
+        </div>
+        <hr>
+        <div class="fin">
+            <p>2025 SamShop. Tous droits réservés</p>
+        </div>
+    </footer>
+
+
+    <script src="./scripts/data.js"></script>
+</body>
+</html>
