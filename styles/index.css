@@ -537,7 +537,8 @@ hr{
     width: 95%;
     height: 100%;
     padding: 10px;
-   
+   overflow: auto;
+  
 
 }
 .itemes{
@@ -547,7 +548,7 @@ hr{
      height: 100px;
      justify-content: center;
      align-items: center;
-    
+     margin: 10px 0;
 }
 .valid{
     display: grid;
@@ -563,7 +564,8 @@ hr{
 .info p{
     padding: 0;
     margin: 0;
-    font-size: 0.9rem;
+    font-size: 1.2rem;
+    font-weight: bold;
 }
 .footer{
     display: flex;
@@ -571,8 +573,12 @@ hr{
     justify-content: center;
     gap: 5px;
 }
+.footer p{
+    font-weight: bold;
+    font-size: 1.2rem;
+}
 .footer button{
-    padding: 0 5px;
+    padding: 9px 10px;
     cursor: pointer;
     border: none;
     border-radius: 50%;

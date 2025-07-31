@@ -1,5 +1,5 @@
 window.addEventListener("load",()=>{
- document.getElementById("Contact").classList.add('affiche');
+ document.getElementById("Boutique").classList.add('affiche');
 })
 
 //pour chaner le background du menu active et afficher la section concerner
@@ -21,28 +21,6 @@ menu.forEach((e)=>{
     
   })
 })
-// let iconCart = document.querySelector('.iconCart');
-// let cart = document.querySelector('.cart');
-// let container = document.querySelector('.container');
-// let close = document.querySelector('.close');
-
-//pour le panier
-// iconCart.addEventListener('click', function(){
-//     if(cart.style.right == '-100%'){
-//         cart.style.right = '0';
-//         container.style.transform = 'translateX(-400px)';
-//     }else{
-//         cart.style.right = '-100%';
-//         container.style.transform = 'translateX(0)';
-//     }
-// })
-// close.addEventListener('click', function (){
-//     cart.style.right = '-100%';
-//     container.style.transform = 'translateX(0)';
-// })
-
-
-
 document.querySelector("#hamber").addEventListener("click",function(){
     document.querySelector(".nav-link").classList.toggle("active")
 })
