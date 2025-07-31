@@ -43,3 +43,5 @@ document.querySelector("#hamber").addEventListener("click",function(){
  document.querySelector(".fass").addEventListener("click",function(){
   document.querySelector(".panier").classList.toggle("shop")
  })   
+
+ //ok
