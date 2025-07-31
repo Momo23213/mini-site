@@ -1,5 +1,5 @@
 window.addEventListener("load",()=>{
- document.getElementById("Boutique").classList.add('affiche');
+ document.getElementById("Acceuil").classList.add('affiche');
 })
 
 //pour chaner le background du menu active et afficher la section concerner
