@@ -315,7 +315,7 @@ let i=1;
                         <div class="img"><img src="${produit.image}"></div>
                         <div class="info">
                             <p>${produit.nom}</p>
-                          <p>${produit.prix}€ x ${produit.quantite} = ${ligneTotal} GNF</p>
+                          <p>${produit.prix} x ${produit.quantite} = ${ligneTotal} GNF</p>
                         </div>
                         <div class="footer">
                         <button onclick="modifierQuantite('${id}', -1)">–</button>
